@@ -1,0 +1,15 @@
+
+# -*- python -*-
+
+# Mips32 Big endian (Mips32EbIss)
+
+Module('common:mips32eb_sls',
+	classname = 'soclib::common::Mips32EbIss',
+	header_files = ["../include/iss/mips32.h",],
+	uses = [
+		Uses('common:mips32'),
+		],
+	  extensions = [
+	'dsx:cpu=mips32eb'
+	],
+)

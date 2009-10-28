@@ -1,0 +1,26 @@
+
+# -*- python -*-
+
+Module('common:mips32_sls',
+	classname = 'soclib::common::Mips32Iss',
+	header_files = ["../include/mips32.h",],
+	   uses = [
+	Uses('common:iss2_sls'),
+	Uses('common:base_module'),
+	],
+	implementation_files = [
+	"../src/mips32.cpp",
+	"../src/mips32_cp0.cpp",
+	"../src/mips32_hazard.cpp",
+	"../src/mips32_instructions.cpp",
+	"../src/mips32_load_store.cpp",
+	"../src/mips32_run.cpp",
+	"../src/mips32_special.cpp",
+	"../src/mips32_special2.cpp",
+	"../src/mips32_special3.cpp",
+	],
+	   constants = {
+	'n_irq':6
+	},
+#   debug = True,
+)

@@ -1,0 +1,26 @@
+# -*- python -*-
+
+Module('caba:vci_idct_sls',
+	classname = 'soclib::caba::VciIDCT',
+	   tmpl_parameters = [
+	   parameter.Module('vci_param', default = 'caba:vci_param'),
+	],
+	header_files = [ '../source/include/vci_idct.h',],
+	implementation_files = [ '../source/src/vci_idct.cpp',],
+	uses = [
+		Uses('caba:base_module'),
+		Uses('caba:generic_fifo'),
+		Uses('common:mapping_table'),
+	],
+	ports = [
+		Port('caba:vci_target', 'p_t_vci'),
+		Port('caba:bit_in', 'p_resetn', auto = 'resetn'),
+		Port('caba:clock_in', 'p_clk', auto = 'clock'),
+	],
+
+	instance_parameters = [
+		parameter.Module('mt', 'common:mapping_table', auto='env:mapping_table'),
+		parameter.IntTab('t_ident'),
+	],
+	
+)

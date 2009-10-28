@@ -1,0 +1,15 @@
+
+# -*- python -*-
+
+# Mips32 Little endian (Mips32ElIss)
+
+Module('common:mips32el_sls',
+	classname = 'soclib::common::Mips32ElIss',
+	header_files = ["../include/iss/mips32.h",],
+	uses = [
+		Uses('common:mips32_sls'),
+		],
+	  extensions = [
+	'dsx:cpu=mips32el'
+	],
+)
